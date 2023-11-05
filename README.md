@@ -86,3 +86,13 @@ mount /dev/nvme0n1p2 /mnt/boot
 ```
 
 # Install base packages
+ pacstrap -K /mnt base linux linux-firmware nvim
+
+ I am going to keep the installation as minimal as possible so that I can show you the true power of arch.
+
+we need grub for a bootloader make sure you have mounted then run the following:
+
+```
+pacman -S grub efibootmgrgrub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Archgrub-mkconfig -o /boot/grub/grub.cfg
+```
+ 
